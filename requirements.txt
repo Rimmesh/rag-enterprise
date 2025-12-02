@@ -1,1 +1,9 @@
-hh
+streamlit
+requests
+fastapi
+uvicorn
+pypdf
+langchain
+sentence-transformers
+faiss-cpu
+python-multipart
