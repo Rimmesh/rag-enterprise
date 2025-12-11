@@ -1,0 +1,47 @@
+# ⚠️ DO NOT TRACK DATA OR SECRETS
+data/
+config/
+secrets/
+.env
+*.env
+*.pkl
+*.npz
+*.bin
+*.json
+
+# Vector stores & embeddings
+faiss/
+index/
+chroma/
+*.pkl
+
+# Chunked text files
+*.txt
+*.md
+*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.env/
+env/
+.venv/
+
+# Streamlit/webapp temp files
+*.log
+*.db
+*.sqlite3
+
+# Node modules (frontend)
+node_modules/
+
+# Build folders
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
