@@ -12,7 +12,7 @@ app.include_router(auth_router)
 
 
 class Question(BaseModel):
-    question: str   # ⚠ we now expect 'question' (matches Streamlit JSON)
+    question: str   
 
 
 @app.post("/ask")
