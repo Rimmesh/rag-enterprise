@@ -4,7 +4,7 @@ TEXT_INPUT_PATH = "data/text"
 CHUNKS_PATH = "data/chunks"
 
 # Customize keywords here if needed
-KEYWORDS = ["procédure", "facturation", "diagramme", "politique", "client"]
+KEYWORDS = ["immatriculation", "facturation", "diagramme", "politique", "client"]
 
 
 def load_all_text(path):
@@ -31,7 +31,7 @@ def check_keyword_presence(path, label):
 
 def evaluate_coverage():
     """Compare total size of extracted text vs chunked text."""
-    print("\n📏 Coverage Evaluation")
+    print("\n Coverage Evaluation")
     original_text = load_all_text(TEXT_INPUT_PATH)
     chunks_text = load_all_text(CHUNKS_PATH)
 

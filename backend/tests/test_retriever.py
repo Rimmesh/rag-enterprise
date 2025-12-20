@@ -8,7 +8,7 @@ from backend.vectordb.retriever import Retriever
 
 retriever = Retriever()
 
-query = "procédure de facturation"
+query = "immatriculation"
 results = retriever.search(query, top_k=3)
 
 print("\n Query:", query)
