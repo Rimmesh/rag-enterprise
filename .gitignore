@@ -1,47 +1,67 @@
-# ⚠️ DO NOT TRACK DATA OR SECRETS
-data/
-config/
-secrets/
+# ===============================
+# 🔐 Secrets & environment
+# ===============================
 .env
 *.env
-*.pkl
-*.npz
-*.bin
-*.json
+secrets/
+config/secrets*
 
-# Vector stores & embeddings
+# ===============================
+# 🧠 Data & vector stores
+# ===============================
+data/
 faiss/
 index/
 chroma/
 *.pkl
+*.npz
+*.bin
 
-# Chunked text files
-*.txt
-*.md
-*.csv
+# ===============================
+# 🧪 ML / Large artifacts
+# ===============================
+*.pt
+*.pth
+*.onnx
 
-# Python cache
+# ===============================
+# 🐍 Python cache
+# ===============================
 __pycache__/
 *.pyc
+*.pyo
 
-# Virtual environments
+# ===============================
+# 🧪 Virtual environments
+# ===============================
 venv/
-.env/
 env/
 .venv/
+.venv-rag/
 
-# Streamlit/webapp temp files
+# ===============================
+# 🌐 Streamlit / runtime
+# ===============================
 *.log
 *.db
 *.sqlite3
 
-# Node modules (frontend)
+# ===============================
+# ⚛️ Frontend (if React later)
+# ===============================
 node_modules/
-
-# Build folders
 dist/
 build/
 
-# IDE files
+# ===============================
+# 🧠 IDE
+# ===============================
 .vscode/
 .idea/
+
+# ===============================
+# ✅ Allowed important files
+# ===============================
+!data/README.md
+!docs/**/*.md
+!backend/**/*.json
