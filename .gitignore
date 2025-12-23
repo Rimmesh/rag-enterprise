@@ -10,12 +10,12 @@ config/secrets*
 # 🧠 Data & vector stores
 # ===============================
 data/
-faiss/
-index/
+!data/.gitkeep
 chroma/
 *.pkl
 *.npz
 *.bin
+*.faiss
 
 # ===============================
 # 🧪 ML / Large artifacts
@@ -40,18 +40,20 @@ env/
 .venv-rag/
 
 # ===============================
-# 🌐 Streamlit / runtime
+# 🌐 Runtime / logs
 # ===============================
 *.log
 *.db
 *.sqlite3
 
 # ===============================
-# ⚛️ Frontend (if React later)
+# ⚛️ Frontend
 # ===============================
 node_modules/
 dist/
 build/
+rag-frontend/node_modules/
+rag-frontend/dist/
 
 # ===============================
 # 🧠 IDE
@@ -62,6 +64,5 @@ build/
 # ===============================
 # ✅ Allowed important files
 # ===============================
-!data/README.md
 !docs/**/*.md
 !backend/**/*.json

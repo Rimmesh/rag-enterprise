@@ -21,15 +21,16 @@ class Retriever:
         with open(META_PATH, "rb") as f:
             self.metadata = pickle.load(f)
 
-    def search(self, query, top_k=5):
+    def search(self, query, top_k=5, max_distance=0.6):
         query_vec = embed_text([query])
         query_vec = np.array(query_vec).astype("float32")
 
         distances, indices = self.index.search(query_vec, top_k)
 
         results = []
-        for idx in indices[0]:
-            if idx < len(self.metadata):
+        for dist, idx in zip(distances[0], indices[0]):
+            if idx < len(self.metadata) and dist <= max_distance:
                 results.append(self.metadata[idx])
 
         return results
+

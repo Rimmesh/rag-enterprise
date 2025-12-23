@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap");
+
+.landing-root {
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
+  overflow: hidden;
+  position: relative;
+}
+
+/* --- ORB BACKGROUND --- */
+.bg-orbs span {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.45;
+  animation: float 18s infinite alternate ease-in-out;
+}
+
+.bg-orbs span:nth-child(1) {
+  background: #7c3aed;
+  top: -120px;
+  left: -120px;
+}
+
+.bg-orbs span:nth-child(2) {
+  background: #6366f1;
+  bottom: -150px;
+  right: -100px;
+  animation-delay: 3s;
+}
+
+.bg-orbs span:nth-child(3) {
+  background: #22d3ee;
+  top: 40%;
+  left: 60%;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-40px) translateX(40px);
+  }
+}
+
+/* --- CONTENT --- */
+.landing-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: auto;
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+}
+
+.landing-title {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.landing-title span {
+  background: linear-gradient(90deg, #a78bfa, #22d3ee);
+  background-clip: text;          /* standard */
+  -webkit-background-clip: text;  /* webkit */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.landing-subtitle {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: #c7d2fe;
+}
+
+/* --- BUTTONS --- */
+.landing-actions {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  border: none;
+  color: white;
+  padding: 0.9rem 2.2rem;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(139, 92, 246, 0.6);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 0.9rem 2.2rem;
+  border-radius: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* --- FEATURES --- */
+.landing-features {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.2rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+  backdrop-filter: blur(18px);
+  transition: transform 0.25s ease;
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+}
+
+/* --- FOOTER --- */
+.landing-footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  color: rgba(199, 210, 254, 0.5);
+}
+/* ===============================
+   AUTH MODAL (LOGIN / REGISTER)
+   =============================== */
+
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 30, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.auth-modal {
+  width: 420px;
+  max-width: 92%;
+  padding: 34px 32px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  animation: authPop 0.28s ease;
+}
+
+/* Modal animation */
+@keyframes authPop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

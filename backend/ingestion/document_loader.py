@@ -8,29 +8,65 @@ TEXT_OUTPUT_PATH = "data/text"
 
 os.makedirs(TEXT_OUTPUT_PATH, exist_ok=True)
 
-def extract_from_pdf(file_path):
+
+def extract_from_pdf(file_path: str) -> str:
     reader = PdfReader(file_path)
     text = ""
     for page in reader.pages:
-        text += page.extract_text() + "\n"
+        page_text = page.extract_text()
+        if page_text:
+            text += page_text + "\n"
     return text
 
-def extract_from_docx(file_path):
+
+def extract_from_docx(file_path: str) -> str:
     doc = Document(file_path)
     return "\n".join([p.text for p in doc.paragraphs])
 
-def extract_from_pptx(file_path):
+
+def extract_from_pptx(file_path: str) -> str:
     ppt = Presentation(file_path)
     text = ""
     for slide in ppt.slides:
         for shape in slide.shapes:
-            if hasattr(shape, "text"):
+            if hasattr(shape, "text") and shape.text:
                 text += shape.text + "\n"
     return text
 
-def extract_from_txt(file_path):
+
+def extract_from_txt(file_path: str) -> str:
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
+
+
+def extract_single_file(file_path: str, original_name: str) -> str:
+    """
+    NEW (upload support): Extract ONE file and write its text into data/text
+    WITHOUT changing the existing batch ingestion behavior.
+    """
+    name = original_name.lower()
+
+    if name.endswith(".pdf"):
+        text = extract_from_pdf(file_path)
+
+    elif name.endswith(".docx"):
+        text = extract_from_docx(file_path)
+
+    elif name.endswith(".pptx"):
+        text = extract_from_pptx(file_path)
+
+    elif name.endswith(".txt"):
+        text = extract_from_txt(file_path)
+
+    else:
+        raise ValueError(f"Unsupported file type: {original_name}")
+
+    output_file = os.path.join(TEXT_OUTPUT_PATH, original_name + ".txt")
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(text)
+
+    return output_file
+
 
 def extract_documents():
     for filename in os.listdir(RAW_DATA_PATH):
@@ -58,6 +94,7 @@ def extract_documents():
             f.write(text)
 
         print(f"Extracted: {filename}")
+
 
 if __name__ == "__main__":
     extract_documents()
