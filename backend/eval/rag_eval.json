@@ -1,0 +1,72 @@
+[
+  {
+    "question": "What is the global objective of the project described in PROJET_ETAPES.txt?",
+    "answer": "Fixer un objectif globale (ou plusieurs sous objectifs adjacents) en se basant sur le problème à traiter ou le dataset trouvé.",
+    "source_doc": "PROJET_ETAPES.txt"
+  },
+  {
+    "question": "Which steps belong to the KDD process according to the document?",
+    "answer": "Observation des données, pré-traitements nécessaires comme la suppression des doublons, la gestion des valeurs manquantes, la correction des erreurs et la vérification de l'intégrité des données.",
+    "source_doc": "PROJET_ETAPES.txt"
+  },
+  {
+    "question": "Which algorithms are listed in the data mining phase?",
+    "answer": "Classification, clustering, régression, association et détection d’anomalies.",
+    "source_doc": "PROJET_ETAPES.txt"
+  },
+  {
+    "question": "What criteria are used to evaluate extracted models?",
+    "answer": "La validité, la nouveauté et l’utilité des modèles extraits.",
+    "source_doc": "PROJET_ETAPES.txt"
+  },
+  {
+    "question": "What performance metrics are explicitly mentioned?",
+    "answer": "Accuracy et F1-score.",
+    "source_doc": "PROJET_ETAPES.txt"
+  },
+  {
+    "question": "What does ALPR stand for according to the document?",
+    "answer": "Automated License Plate Recognition.",
+    "source_doc": "alpr.docx"
+  },
+  {
+    "question": "Which phase focuses on license plate detection and which model is used?",
+    "answer": "Phase 2 focuses on license plate detection using the YOLOv8 model.",
+    "source_doc": "alpr.docx"
+  },
+  {
+    "question": "What is the result of Phase 2 in the ALPR project?",
+    "answer": "A trained detector model that can find plates in new images.",
+    "source_doc": "alpr.docx"
+  },
+  {
+    "question": "What dataset format is used for training in the ALPR project?",
+    "answer": "The dataset is prepared in YOLO format.",
+    "source_doc": "alpr.docx"
+  },
+  {
+    "question": "What is the objective of Sprint 1?",
+    "answer": "Implémenter les fonctionnalités fondamentales nécessaires au bon fonctionnement initial de l'application.",
+    "source_doc": "Backlog_de_Sprint_DADI_MESHETE_2025.pdf"
+  },
+  {
+    "question": "Which methodology is used in the project?",
+    "answer": "La méthodologie Scrum.",
+    "source_doc": "Backlog_de_Sprint_DADI_MESHETE_2025.pdf"
+  },
+  {
+    "question": "What does the project GC_2025 focus on?",
+    "answer": "Application de gestion des réservations dans un espace de coworking.",
+    "source_doc": "Backlog_de_Sprint_DADI_MESHETE_2025.pdf"
+  },
+  {
+    "question": "Which user roles are mentioned in the project?",
+    "answer": "Client, Staff et Administrateur.",
+    "source_doc": "Backlog_de_Sprint_DADI_MESHETE_2025.pdf"
+  },
+  {
+    "question": "Which role is allowed to manage spaces?",
+    "answer": "Administrateur.",
+    "source_doc": "Backlog_de_Sprint_DADI_MESHETE_2025.pdf"
+  }
+]
